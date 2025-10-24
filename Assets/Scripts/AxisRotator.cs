@@ -16,12 +16,12 @@ public class AxisRotator : MonoBehaviour
     private void FixedUpdate()
     {
         if (_inputHandler.IsTurningRight)
-            Rotate(Vector3.back);
+            RotateTo(Vector3.back);
 
         if (_inputHandler.IsTurningLeft)
-            Rotate(Vector3.forward);
+            RotateTo(Vector3.forward);
     }
 
-    private void Rotate(Vector3 direction) 
+    private void RotateTo(Vector3 direction) 
         => _rigidbody.AddTorque(direction * _forceRotation, ForceMode.Force);
 }
